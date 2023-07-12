@@ -1,0 +1,30 @@
+body{
+    background-color: white;
+    margin-top: 100px;
+}
+
+div#btn{
+    margin-left: 10% !important;
+    margin-right: 150px !important;
+    background-color: rgb(114, 237, 200);
+    padding-left: 20%;
+}
+
+iframe{
+    height: 600px !important;
+    background-color: white;
+}
+
+div{
+    border: none;
+    margin-bottom: 10px;
+}
+
+button,input,select{
+    margin: 5px;
+}
+
+button{
+    color: white;
+    background-color: #2f95e8;
+}

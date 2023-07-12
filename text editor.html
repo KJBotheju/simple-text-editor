@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Text Editor</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body onload="enableEditMode()">
+
+        <div id="btn">
+
+            <button onclick="Edit('bold')" title="bold" style="height: 30px;"><i class="fa fa-bold"></i></button>
+            <button onclick="Edit('underline')" title="underline" style="height: 30px;"><i class="fa fa-underline"></i></button>
+            <button onclick="Edit('italic')" title="italic" style="height: 30px;"><i class="fa fa-italic"></i></button>
+            <button onclick="Edit('color')" title="color" style="height: 31px;" ><i class="fa fa-font"></i> <input type="color" onchange="execVal('foreColor',this.value)" style="height: 19px;width: 25px;"></button>
+            <button onclick="Edit('justifyLeft')" title="Align Left" style="height: 30px;"><img src="image/left.png" alt="left" style="height: 12px;"></button>
+            <button onclick="Edit('justifyCenter')" title="Align Center" style="height: 30px;"><img src="image/center.png" alt="center" style="height: 12px;"></button>
+            <button onclick="Edit('justifyRight')" title="Align Right" style="height: 30px;"><img src="image/right.png" alt="right" style="height: 12px;"></button>
+            <button onclick="Edit('justifyFull')" title="justify" style="height: 30px;"><img src="image/justify.png" alt="justify" style="height: 12px;"></button>
+            <button onclick="Edit('undo')" title="undo" style="height: 30px;"><img src="image/undo-4-32.png" alt="undo" style="height: 12px;"></button>
+            <button onclick="Edit('redo')" title="redo" style="height: 30px;"><img src="image/action-redo-32.png" alt="redo" style="height: 12px;"></button>
+            
+        </div>
+
+        <iframe name="textfield" style="width: 80%; height: 80%; margin: auto; display: block;" ></iframe>
+
+        <!-- JavaScript -->
+        <script>
+
+            function enableEditMode(){
+                textfield.document.designMode = "on";
+            }
+
+            function Edit(command){
+                textfield.document.execCommand(command,false,null);
+            }
+
+            function execVal(command,value){
+                textfield.document.execCommand(command,false,value);
+            }
+        </script>
+    </body>
+</html>
